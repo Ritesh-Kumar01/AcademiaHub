@@ -1,18 +1,25 @@
 import { useState } from 'react'
 import Navbar from "./Components/Navbar/Navbar"
 import Hero from "./Components/Hero/Hero"
+import Footer from './Components/Footer/Footer'
+import Newsletter from './Components/Newsletter/Newsletter'
+import TopCourses from './Components/TopCourses/TopCourses'
+import TopExams from './Components/TopExams/TopExams'
+import SubscribeAlert from './Components/SubscribeAlert/SubscribeAlert'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-       <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
   <Navbar />
   <Hero/>
+<TopCourses/>
+<TopExams/>
+<SubscribeAlert/>
 
+    <Newsletter/>
+    <Footer/>
     </>
   )
 }
