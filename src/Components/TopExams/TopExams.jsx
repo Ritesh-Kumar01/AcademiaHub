@@ -39,6 +39,38 @@ const exams = [
     difficulty: "Challenging",
     applicants: "500K+",
     icon: <StarIcon className="w-8 h-8 text-yellow-500" />
+  },
+  {
+    name: "JEE Main",
+    logo: "https://w7.pngwing.com/pngs/612/865/png-transparent-central-board-of-secondary-education-ugc-net-cbse-exam-class-10-neet-jee-main-school-label-logo-india.png",
+    description: "Premier engineering entrance examination in India",
+    difficulty: "Advanced",
+    applicants: "1.5M+",
+    icon: <AcademicCapIcon className="w-8 h-8 text-blue-500" />
+  },
+  {
+    name: "IELTS",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/IELTS_logo.svg/1200px-IELTS_logo.svg.png",
+    description: "International English Language Testing System",
+    difficulty: "Intermediate",
+    applicants: "3M+",
+    icon: <GlobeAltIcon className="w-8 h-8 text-green-500" />
+  },
+  {
+    name: "SAT",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/College_Board_logo.svg/1200px-College_Board_logo.svg.png",
+    description: "Standardized test for college admissions",
+    difficulty: "Comprehensive",
+    applicants: "2.2M+",
+    icon: <DocumentCheckIcon className="w-8 h-8 text-purple-500" />
+  },
+  {
+    name: "BITSAT",
+    logo: "https://static.zollege.in/public/college_data/images/logos/BITS%20Pilani%20Logo.png",
+    description: "BITS Pilani Integrated First Degree Program",
+    difficulty: "Challenging",
+    applicants: "500K+",
+    icon: <StarIcon className="w-8 h-8 text-yellow-500" />
   }
 ];
 
