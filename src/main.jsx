@@ -20,8 +20,13 @@ import Register from "./Pages/Register/Register"
 import './index.css'
 import Navbar from './Components/Navbar/Navbar'
 
+import Dashboard from './Components/Dashboard/Dashboard';
+import { AuthProvider } from "./contexts/authContext";
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <AuthProvider>
+
+
     <Router>
     <Navbar/>
       <Routes>
@@ -29,8 +34,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        {/* Add more routes as needed */}
+
+        <Route path="/dashboard" element={<Dashboard />} />
+         
       </Routes>
     </Router>
+    </AuthProvider>
   </React.StrictMode>,
 )

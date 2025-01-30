@@ -17,7 +17,11 @@ import {
   Bars3Icon ,
   XMarkIcon 
 } from "@heroicons/react/24/outline";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+import { useAuth } from './../../contexts/authContext'
+import { doSignOut } from './../../firebase/auth'
+
 
 // City Selector Component
 const CitySelector = () => {
@@ -161,6 +165,11 @@ const ExploreDropdown = ({ isOpen, onClose }) => {
 };
 
 const Navbar = () => {
+
+  const { userLoggedIn } = useAuth()
+
+  const navigate = useNavigate()
+
   const [darkMode, setDarkMode] = useState(false);
   const [isExploreOpen, setIsExploreOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -261,13 +270,21 @@ const Navbar = () => {
               {darkMode ? <SunIcon className="w-5 h-5 text-yellow-500" /> : <MoonIcon className="w-5 h-5 text-gray-800" />}
             </button>
 
-            {/* Login Button - Hidden on small screens */}
+            {userLoggedIn ? (
+            <button
+            onClick={() => { doSignOut().then(() => { navigate('/login') }) }}
+              className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition hidden md:block"
+            >
+              Logout
+            </button>
+          ) : (
             <Link 
               to="/login" 
               className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition hidden md:block"
             >
               Login
             </Link>
+          )}
 
             {/* Mobile Menu Toggle */}
             <button
@@ -328,12 +345,21 @@ const Navbar = () => {
                   {darkMode ? <SunIcon className="w-5 h-5 text-yellow-500" /> :  <MoonIcon className="w-5 h-5 text-gray-800" />}
                   <span>{darkMode ? "Light Mode" : "Dark Mode"}</span>
                 </button>
-                <Link 
-                  to="/login" 
-                  className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
-                >
-                  Login
-                </Link>
+                {userLoggedIn ? (
+              <button
+              onClick={() => { doSignOut().then(() => { navigate('/login') }) }}
+                className="w-full px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition"
+              >
+                Logout
+              </button>
+            ) : (
+              <Link
+                to="/login"
+                className="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+              >
+                Login
+              </Link>
+            )}
               </div>
             </motion.div>
           )}
