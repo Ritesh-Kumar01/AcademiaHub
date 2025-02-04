@@ -7,6 +7,7 @@ import TopCourses from './Components/TopCourses/TopCourses'
 import TopExams from './Components/TopExams/TopExams'
 import SubscribeAlert from './Components/SubscribeAlert/SubscribeAlert'
 import TopCollegesTable from './Components/TopTenCollege/TopTenCollege'
+import StudyGoal from './Components/StudyGoal/StudyGoal'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,6 +16,7 @@ function App() {
     <>
   <Hero/>
 <TopCourses/>
+<StudyGoal/>
 <TopExams/>
 <SubscribeAlert/>
 
