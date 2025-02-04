@@ -6,6 +6,7 @@ import Newsletter from './Components/Newsletter/Newsletter'
 import TopCourses from './Components/TopCourses/TopCourses'
 import TopExams from './Components/TopExams/TopExams'
 import SubscribeAlert from './Components/SubscribeAlert/SubscribeAlert'
+import TopCollegesTable from './Components/TopTenCollege/TopTenCollege'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,6 +19,7 @@ function App() {
 <SubscribeAlert/>
 
     <Newsletter/>
+    <TopCollegesTable/>
     <Footer/>
     </>
   )
